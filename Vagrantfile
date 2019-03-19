@@ -41,14 +41,14 @@ Vagrant.configure("2") do |config|
 
    # install chromium browser
     config.vm.provision "shell", inline: "sudo apt-get -y install chromium-browser"
-    config.vm.provision "shell", inline: "echo hacer un vagrant reload cuando finalice todo; Para entrar modo grafico en VM escribir startx"
+    config.vm.provision "shell", inline: "echo hacer un vagrant reload cuando finalice todo para entrar modo grafico en VM escribir startx"
 
    # for install a docker linux sqlserver you have put this in virtual machine
    # sudo docker pull microsoft/mssql-server-linux
 
    # Con esto se creara un docker con el servicio sql server instalado luego para arrancar en sql server se ha de poner lo siguiente
    
-   # docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -p 1433:1433 -d microsoft/mssql-server-linux:latest
+   #sudo  docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -p 1433:1433 -d microsoft/mssql-server-linux:latest
    # es una linea de configuracion de sqll server para registrar un password y puertos .
    
    # luego para conectarse a la base de datos se ha de poner la siguiente linea
@@ -61,4 +61,6 @@ Vagrant.configure("2") do |config|
 
 
 end
+
+
 
