@@ -11,36 +11,37 @@ Vagrant.configure("2") do |config|
    end
    
    # Install viewer desktop
-   # config.vm.provision "shell", inline: " echo --------Installing viewer desktop - Upgrading--------------"
-   # config.vm.provision "shell", inline: "sudo apt-get install -y xfce4 virtualbox-guest-dkms virtualbox-guest-x11"
-   
+    config.vm.provision "shell", inline: " echo --------Installing viewer desktop - Upgrading--------------"
+    config.vm.provision "shell", inline: " sudo apt-get -y update && sudo apt-get -y dist-upgrade"
+    config.vm.provision "shell", inline: "sudo apt-get install -y xfce4 virtualbox-guest-dkms virtualbox-guest-x11"
 
    # Installing .net core 2.2
-   # config.vm.provision "shell", inline: " echo --------Installing .net COre--------------"
-   # config.vm.provision "shell", inline: "wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb"
-   # config.vm.provision "shell", inline: "sudo dpkg -i packages-microsoft-prod.deb"
-   # config.vm.provision "shell", inline: "yes | sudo apt-get install apt-transport-https"
-   # config.vm.provision "shell", inline: " echo --------Installing .net COre --  UPDATE--------------"
-   # config.vm.provision "shell", inline: "yes | sudo apt-get update"  
-   # config.vm.provision "shell", inline: " echo --------Installing .net COre --  INSTALLING--------------"
-   # config.vm.provision "shell", inline: "yes | sudo apt-get install dotnet-sdk-2.2"
+    config.vm.provision "shell", inline: " echo --------Installing .net COre--------------"
+    config.vm.provision "shell", inline: "wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb"
+    config.vm.provision "shell", inline: "sudo dpkg -i packages-microsoft-prod.deb"
+    config.vm.provision "shell", inline: "yes | sudo apt-get install apt-transport-https"
+    config.vm.provision "shell", inline: " echo --------Installing .net COre --  UPDATE--------------"
+    config.vm.provision "shell", inline: "yes | sudo apt-get update"  
+    config.vm.provision "shell", inline: " echo --------Installing .net COre --  INSTALLING--------------"
+    config.vm.provision "shell", inline: "yes | sudo apt-get install dotnet-sdk-2.2"
 
-   # config.vm.provision "shell", inline: "sudo curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg"   
-   # config.vm.provision "shell", inline: "yes | sudo apt install snapd"
-   # config.vm.provision "shell", inline: "yes | sudo snap install vscode --classic"
+    config.vm.provision "shell", inline: "sudo curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg"   
+    config.vm.provision "shell", inline: "yes | sudo apt install snapd"
+    config.vm.provision "shell", inline: "yes | sudo snap install vscode --classic"
      
    # Installing Docker
 
-   # config.vm.provision "shell", inline: "yes | sudo apt-get install  curl  apt-transport-https ca-certificates software-properties-common"
-   # config.vm.provision "shell", inline: "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -"
-   # config.vm.provision "shell", inline: "sudo apt-key fingerprint 0EBFCD88"
-   # config.vm.provision "shell", inline: "sudo add-apt-repository 'deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable'"
-   # config.vm.provision "shell", inline: "sudo apt-get update" 
-   # config.vm.provision "shell", inline: "sudo apt-get install docker-ce"
+    config.vm.provision "shell", inline: " sudo apt-get -y install  curl  apt-transport-https ca-certificates software-properties-common"
+    config.vm.provision "shell", inline: "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -"
+    config.vm.provision "shell", inline: "sudo apt-key fingerprint 0EBFCD88"
+    config.vm.provision "shell", inline: "sudo add-apt-repository 'deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable'"
+    config.vm.provision "shell", inline: "sudo apt-get -y update" 
+    config.vm.provision "shell", inline: "sudo apt-get -y install docker-ce"
 
 
    # install chromium browser
-   # config.vm.provision "shell", inline: "sudo apt-get install chromium-browser"
+    config.vm.provision "shell", inline: "sudo apt-get -y install chromium-browser"
+    config.vm.provision "shell", inline: "echo hacer un vagrant reload cuando finalice todo; Para entrar modo grafico en VM escribir startx"
 
    # for install a docker linux sqlserver you have put this in virtual machine
    # sudo docker pull microsoft/mssql-server-linux
@@ -60,3 +61,4 @@ Vagrant.configure("2") do |config|
 
 
 end
+
